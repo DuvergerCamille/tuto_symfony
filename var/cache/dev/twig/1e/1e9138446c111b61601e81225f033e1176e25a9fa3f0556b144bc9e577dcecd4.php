@@ -90,11 +90,12 @@ class __TwigTemplate_ec91900406005a6617ea798a204a7e40f7dda4d56a6dbf5648e4c12a620
         echo "\">Ajouter une annonce</a></li>
         </ul>
       </div>
+
       <div id=\"content\" class=\"col-md-9\">
         ";
-        // line 39
+        // line 40
         $this->displayBlock('body', $context, $blocks);
-        // line 41
+        // line 42
         echo "      </div>
     </div>
 
@@ -102,16 +103,16 @@ class __TwigTemplate_ec91900406005a6617ea798a204a7e40f7dda4d56a6dbf5648e4c12a620
 
     <footer>
       <p>The sky's the limit © ";
-        // line 47
+        // line 48
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, "now", "Y"), "html", null, true);
         echo " and beyond.</p>
     </footer>
   </div>
 
   ";
-        // line 51
+        // line 52
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 56
+        // line 57
         echo "
 </body>
 </html>
@@ -166,7 +167,7 @@ class __TwigTemplate_ec91900406005a6617ea798a204a7e40f7dda4d56a6dbf5648e4c12a620
 
     }
 
-    // line 39
+    // line 40
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -176,7 +177,7 @@ class __TwigTemplate_ec91900406005a6617ea798a204a7e40f7dda4d56a6dbf5648e4c12a620
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 40
+        // line 41
         echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -186,7 +187,7 @@ class __TwigTemplate_ec91900406005a6617ea798a204a7e40f7dda4d56a6dbf5648e4c12a620
 
     }
 
-    // line 51
+    // line 52
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -196,9 +197,9 @@ class __TwigTemplate_ec91900406005a6617ea798a204a7e40f7dda4d56a6dbf5648e4c12a620
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 52
-        echo "    ";
         // line 53
+        echo "    ";
+        // line 54
         echo "    <script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js\"></script>
     <script src=\"//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js\"></script>
   ";
@@ -222,7 +223,7 @@ class __TwigTemplate_ec91900406005a6617ea798a204a7e40f7dda4d56a6dbf5648e4c12a620
 
     public function getDebugInfo()
     {
-        return array (  202 => 53,  200 => 52,  190 => 51,  180 => 40,  170 => 39,  159 => 11,  157 => 10,  147 => 9,  128 => 7,  115 => 56,  113 => 51,  106 => 47,  98 => 41,  96 => 39,  89 => 35,  85 => 34,  62 => 13,  60 => 9,  55 => 7,  47 => 1,);
+        return array (  203 => 54,  201 => 53,  191 => 52,  181 => 41,  171 => 40,  160 => 11,  158 => 10,  148 => 9,  129 => 7,  116 => 57,  114 => 52,  107 => 48,  99 => 42,  97 => 40,  89 => 35,  85 => 34,  62 => 13,  60 => 9,  55 => 7,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -264,6 +265,7 @@ class __TwigTemplate_ec91900406005a6617ea798a204a7e40f7dda4d56a6dbf5648e4c12a620
           <li><a href=\"{{ path('oc_advert_add') }}\">Ajouter une annonce</a></li>
         </ul>
       </div>
+
       <div id=\"content\" class=\"col-md-9\">
         {% block body %}
         {% endblock %}

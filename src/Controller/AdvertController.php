@@ -65,4 +65,5 @@ class AdvertController extends Controller
 	{
 		return $this->render('Advert/delete.html.twig');
 	}
+
 }
