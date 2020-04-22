@@ -42,10 +42,11 @@ class __TwigTemplate_19aa47e29b7b732b6cce426e6d5fd362512f76d42788b38a6cf97439886
         // line 1
         echo "<h3>Formulaire d'annonce</h3>
 
-<div class=\"well\">
-  Ici se trouvera le formulaire.
-</div>
 ";
+        // line 5
+        echo "<div class=\"well\">
+  Ici se trouvera le formulaire.
+</div>";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -61,16 +62,17 @@ class __TwigTemplate_19aa47e29b7b732b6cce426e6d5fd362512f76d42788b38a6cf97439886
 
     public function getDebugInfo()
     {
-        return array (  43 => 1,);
+        return array (  47 => 5,  43 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<h3>Formulaire d'annonce</h3>
 
+{# On laisse vide la vue pour l'instant, on la comblera plus tard
+   lorsqu'on saura afficher un formulaire. #}
 <div class=\"well\">
   Ici se trouvera le formulaire.
-</div>
-", "Advert/_form.html.twig", "/home/user42/Bureau/my_project/templates/Advert/_form.html.twig");
+</div>", "Advert/_form.html.twig", "/home/grandma/Desktop/tuto_symfony/templates/Advert/_form.html.twig");
     }
 }

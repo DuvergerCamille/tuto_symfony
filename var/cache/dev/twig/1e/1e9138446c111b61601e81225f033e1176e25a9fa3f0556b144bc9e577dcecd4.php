@@ -70,7 +70,7 @@ class __TwigTemplate_ec91900406005a6617ea798a204a7e40f7dda4d56a6dbf5648e4c12a620
         et construit grâce au MOOC OpenClassrooms et SensioLabs.
       </p>
       <p>
-        <a class=\"btn btn-primary btn-lg\" href=\"https://openclassrooms.com/courses/developpez-votre-site-web-avec-le-framework-symfony2\">
+        <a class=\"btn btn-primary btn-lg\" href=\"https://openclassrooms.com/fr/courses/3619856-developpez-votre-site-web-avec-le-framework-symfony/3621582-le-moteur-de-templates-twig\">
           Participer au MOOC »
         </a>
       </p>
@@ -250,7 +250,7 @@ class __TwigTemplate_ec91900406005a6617ea798a204a7e40f7dda4d56a6dbf5648e4c12a620
         et construit grâce au MOOC OpenClassrooms et SensioLabs.
       </p>
       <p>
-        <a class=\"btn btn-primary btn-lg\" href=\"https://openclassrooms.com/courses/developpez-votre-site-web-avec-le-framework-symfony2\">
+        <a class=\"btn btn-primary btn-lg\" href=\"https://openclassrooms.com/fr/courses/3619856-developpez-votre-site-web-avec-le-framework-symfony/3621582-le-moteur-de-templates-twig\">
           Participer au MOOC »
         </a>
       </p>
@@ -285,6 +285,6 @@ class __TwigTemplate_ec91900406005a6617ea798a204a7e40f7dda4d56a6dbf5648e4c12a620
 
 </body>
 </html>
-", "layout.html.twig", "/home/user42/Bureau/my_project/templates/layout.html.twig");
+", "layout.html.twig", "/home/grandma/Desktop/tuto_symfony/templates/layout.html.twig");
     }
 }

@@ -25,6 +25,7 @@ class __TwigTemplate_9da01fc367746c608da92f704aa8e6efd6d516ecc1a45d0f67cbc8abed5
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
+            'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
         ];
     }
@@ -55,6 +56,29 @@ class __TwigTemplate_9da01fc367746c608da92f704aa8e6efd6d516ecc1a45d0f67cbc8abed5
     }
 
     // line 3
+    public function block_title($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
+
+        // line 4
+        echo "  Ajouter une annonce - ";
+        $this->displayParentBlock("title", $context, $blocks);
+        echo "
+";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 7
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -64,18 +88,27 @@ class __TwigTemplate_9da01fc367746c608da92f704aa8e6efd6d516ecc1a45d0f67cbc8abed5
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 4
+        // line 8
         echo "
   <h2>Ajouter une annonce</h2>
 
   ";
-        // line 7
+        // line 11
         echo twig_include($this->env, $context, "Advert/_form.html.twig");
         echo "
 
   <p>
-    Attention : cette annonce sera ajoutée directement
-    sur la page d'accueil après validation du formulaire.
+    Vous créez une nouvelle annonce.
+  </p>
+
+  <p>
+    <a href=\"";
+        // line 18
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("oc_advert_index");
+        echo "\" class=\"btn btn-default\">
+      <i class=\"glyphicon glyphicon-chevron-left\"></i>
+      Retour à l'accueil
+    </a>
   </p>
 
 ";
@@ -99,12 +132,16 @@ class __TwigTemplate_9da01fc367746c608da92f704aa8e6efd6d516ecc1a45d0f67cbc8abed5
 
     public function getDebugInfo()
     {
-        return array (  73 => 7,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  107 => 18,  97 => 11,  92 => 8,  82 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends \"layout.html.twig\" %}
+
+{% block title %}
+  Ajouter une annonce - {{ parent() }}
+{% endblock %}
 
 {% block body %}
 
@@ -113,11 +150,16 @@ class __TwigTemplate_9da01fc367746c608da92f704aa8e6efd6d516ecc1a45d0f67cbc8abed5
   {{ include(\"Advert/_form.html.twig\") }}
 
   <p>
-    Attention : cette annonce sera ajoutée directement
-    sur la page d'accueil après validation du formulaire.
+    Vous créez une nouvelle annonce.
   </p>
 
-{% endblock %}
-", "Advert/add.html.twig", "/home/user42/Bureau/my_project/templates/Advert/add.html.twig");
+  <p>
+    <a href=\"{{ path('oc_advert_index') }}\" class=\"btn btn-default\">
+      <i class=\"glyphicon glyphicon-chevron-left\"></i>
+      Retour à l'accueil
+    </a>
+  </p>
+
+{% endblock %}", "Advert/add.html.twig", "/home/grandma/Desktop/tuto_symfony/templates/Advert/add.html.twig");
     }
 }

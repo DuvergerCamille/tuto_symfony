@@ -195,6 +195,6 @@ class __TwigTemplate_3c4bd401825271d2505048241faa13aebabbd770bb25d2a7fc25ce815a5
         })|raw }}
     </div>
 {% endif %}
-", "@Twig/Exception/trace.html.twig", "/home/user42/Bureau/my_project/vendor/symfony/twig-bundle/Resources/views/Exception/trace.html.twig");
+", "@Twig/Exception/trace.html.twig", "/home/grandma/Desktop/tuto_symfony/vendor/symfony/twig-bundle/Resources/views/Exception/trace.html.twig");
     }
 }

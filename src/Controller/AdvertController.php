@@ -28,7 +28,14 @@ class AdvertController extends Controller
 
 	public function view($id)
 	{
-		return $this->render('Advert/view.html.twig', ['id' => $id,]);
+		$advert = array(
+			'title'   => 'Recherche développpeur Symfony2',
+			'id'      => $id,
+			'author'  => 'Alexandre',
+			'content' => 'Nous recherchons un développeur Symfony2 débutant sur Lyon. Blabla…',
+			'date'    => new \Datetime()
+		  );
+		return $this->render('Advert/view.html.twig', ['advert' => $advert]);
 	}
 
 	public function add(Request $request)
@@ -44,12 +51,14 @@ class AdvertController extends Controller
 
 	public function edit($id, Request $request)
 	{
-		if ($request->isMethod('POST'))
-		{
-			$this->addFlash('notice', ['id' => 5]);
-			return $this->redirectToRoute('oc_advert_view',['id' => 5]);
-		}
-		return $this->render('Advert/edit.html.twig');
+		$advert = array(
+			'title'   => 'Recherche développpeur Symfony',
+			'id'      => $id,
+			'author'  => 'Alexandre',
+			'content' => 'Nous recherchons un développeur Symfony débutant sur Lyon. Blabla…',
+			'date'    => new \Datetime()
+		  );
+		return $this->render('Advert/edit.html.twig', ['advert' => $advert]);
 	}
 
 	public function delete($id)

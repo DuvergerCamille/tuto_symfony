@@ -1843,6 +1843,6 @@ class __TwigTemplate_1a59abe4dda68dab404743cfe34104259661b4cd603ece1fece380ad850
         </tbody>
     </table>
 {% endmacro %}
-", "@Doctrine/Collector/db.html.twig", "/home/user42/Bureau/my_project/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
+", "@Doctrine/Collector/db.html.twig", "/home/grandma/Desktop/tuto_symfony/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
     }
 }

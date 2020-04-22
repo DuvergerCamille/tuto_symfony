@@ -188,6 +188,6 @@ class __TwigTemplate_e745ecd1c6dfd7caec423ea0f41badbb25919d4d54a88d926c734387cb8
     {% endfor %}
     </tbody>
 </table>
-", "@Twig/Exception/logs.html.twig", "/home/user42/Bureau/my_project/vendor/symfony/twig-bundle/Resources/views/Exception/logs.html.twig");
+", "@Twig/Exception/logs.html.twig", "/home/grandma/Desktop/tuto_symfony/vendor/symfony/twig-bundle/Resources/views/Exception/logs.html.twig");
     }
 }

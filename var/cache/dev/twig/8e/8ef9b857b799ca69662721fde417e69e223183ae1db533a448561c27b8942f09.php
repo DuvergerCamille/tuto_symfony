@@ -1174,6 +1174,6 @@ class __TwigTemplate_3254992c78d939117688fe6a43fdba5056ce11d2bcc59ebc3e64934ba09
         </table>
     {% endif %}
 {% endblock %}
-", "@Security/Collector/security.html.twig", "/home/user42/Bureau/my_project/vendor/symfony/security-bundle/Resources/views/Collector/security.html.twig");
+", "@Security/Collector/security.html.twig", "/home/grandma/Desktop/tuto_symfony/vendor/symfony/security-bundle/Resources/views/Collector/security.html.twig");
     }
 }
