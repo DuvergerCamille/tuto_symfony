@@ -4,3 +4,25 @@
 #index:
 #    path: /
 #    defaults: { _controller: 'App\Controller\DefaultController::index' }
+
+oc_advert_view:
+    path: /advert/view/{id}
+    requirements:
+        id: '\d+'
+    controller: App\Controller\AdvertController::view
+
+oc_advert_add:
+    path: /advert/add
+    controller: App\Controller\AdvertController::add
+
+oc_advert_edit:
+    path: /advert/edit/{id}
+    requirements:
+        id: '\d+'
+    controller: App\Controller\AdvertController::edit
+
+oc_advert_delete:
+    path: /advert/delete/{id}
+    requirements:
+        id: '\d+'
+    controller: App\Controller\AdvertController::delete
