@@ -135,6 +135,11 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        // test
+        if ('/test' === $pathinfo) {
+            return array (  '_controller' => 'App\\Controller\\TestController::index',  '_route' => 'test',);
+        }
+
         if ('/' === $pathinfo && !$allow) {
             throw new Symfony\Component\Routing\Exception\NoConfigurationException();
         }
