@@ -17,11 +17,6 @@ class Advert
     private $id;
 
     /**
-     * @ORM\Column(type="datetime")
-     */
-    private $date;
-
-    /**
      * @ORM\Column(type="string", length=255)
      */
     private $title;
@@ -34,23 +29,16 @@ class Advert
     /**
      * @ORM\Column(type="text")
      */
-    private $Content;
+    private $content;
+
+    /**
+     * @ORM\Column(name="published", type="boolean")
+     */
+    private $published = true;
 
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getDate(): ?\DateTimeInterface
-    {
-        return $this->date;
-    }
-
-    public function setDate(\DateTimeInterface $date): self
-    {
-        $this->date = $date;
-
-        return $this;
     }
 
     public function getTitle(): ?string
@@ -79,12 +67,24 @@ class Advert
 
     public function getContent(): ?string
     {
-        return $this->Content;
+        return $this->content;
     }
 
-    public function setContent(string $Content): self
+    public function setContent(string $content): self
     {
-        $this->Content = $Content;
+        $this->content = $content;
+
+        return $this;
+    }
+
+    public function getPublished(): ?boolean
+    {
+        return $this->published;
+    }
+
+    public function setPublished(boolean $published): self
+    {
+        $this->published = $published;
 
         return $this;
     }
