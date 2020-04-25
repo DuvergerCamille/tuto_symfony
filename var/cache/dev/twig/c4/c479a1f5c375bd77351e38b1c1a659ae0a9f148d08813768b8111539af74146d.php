@@ -174,6 +174,6 @@ class __TwigTemplate_27802e30d976b576e5210dd63b875312e4a486c63d26a54f1f0563d13b3
         {% endif %}
     </div>
 {% endblock %}
-", "@WebProfiler/Profiler/open.html.twig", "/home/user42/Bureau/my_project/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/open.html.twig");
+", "@WebProfiler/Profiler/open.html.twig", "/home/grandma/Desktop/tuto_symfony/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/open.html.twig");
     }
 }

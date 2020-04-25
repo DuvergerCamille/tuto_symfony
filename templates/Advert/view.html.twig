@@ -8,6 +8,7 @@
 {% if advert.image is not null %}
   <img src="{{ advert.image.url }}" alt="{{ advert.image.alt }}">
 {% endif %}
+
   <h2>{{ advert.title }}</h2>
   <i>Par {{ advert.author }}</i>
 
@@ -15,11 +16,30 @@
     {{ advert.content }}
   </div>
 
+  {% if listAdvertSkills|length > 0 %}
+  <div>
+    Cette annonce requiert les compétences suivantes :
+    <ul>
+      {% for advertSkill in listAdvertSkills %}
+        <li>{{ advertSkill.skill.name }} : niveau {{ advertSkill.level }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+    {% if not advert.categories.empty %}
+  <p>
+    Cette annonce est parue dans les catégories suivantes :
+    {% for category in advert.categories %}
+      {{ category.name }}{% if not loop.last %}, {% endif %}
+    {% endfor %}
+  </p>
+{% endif %}
+
   <div>
     <ul>
     {% for mmb in listApplications %}
-        <li> {{ mmb.author }}</li>
-        <li> {{ mmb.content }}</li>
+        <li> {{ mmb.author }} a dit : {{ mmb.content }}</li>
       {% else %}
         <li> Aucun commentaire. </li>
     {% endfor %}

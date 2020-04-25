@@ -109,6 +109,6 @@ class __TwigTemplate_559ac78a03906a937d042a420ec6981f874342a74652043ad487a47b1b5
         </div>
     </body>
 </html>
-", "@Twig/Exception/error.html.twig", "/home/user42/Bureau/my_project/vendor/symfony/twig-bundle/Resources/views/Exception/error.html.twig");
+", "@Twig/Exception/error.html.twig", "/home/grandma/Desktop/tuto_symfony/vendor/symfony/twig-bundle/Resources/views/Exception/error.html.twig");
     }
 }

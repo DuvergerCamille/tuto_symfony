@@ -79,6 +79,6 @@ class __TwigTemplate_1a017b9e14d9a9ce5c5d598d71a929bb578e93c9ad57be9778c25438614
 {{ status_code }} {{ status_text }}
 
 */
-", "@Twig/Exception/error.js.twig", "/home/user42/Bureau/my_project/vendor/symfony/twig-bundle/Resources/views/Exception/error.js.twig");
+", "@Twig/Exception/error.js.twig", "/home/grandma/Desktop/tuto_symfony/vendor/symfony/twig-bundle/Resources/views/Exception/error.js.twig");
     }
 }

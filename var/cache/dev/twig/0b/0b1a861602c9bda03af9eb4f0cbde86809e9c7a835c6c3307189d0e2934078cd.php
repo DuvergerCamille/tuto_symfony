@@ -2232,6 +2232,6 @@ table.logs .metadata {
         margin-left: 2px;
     }
 }
-", "@WebProfiler/Profiler/profiler.css.twig", "/home/user42/Bureau/my_project/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/profiler.css.twig");
+", "@WebProfiler/Profiler/profiler.css.twig", "/home/grandma/Desktop/tuto_symfony/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/profiler.css.twig");
     }
 }

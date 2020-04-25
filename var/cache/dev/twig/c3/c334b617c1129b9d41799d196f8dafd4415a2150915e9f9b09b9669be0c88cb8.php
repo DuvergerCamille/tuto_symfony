@@ -146,6 +146,6 @@ class __TwigTemplate_ea9ea48fe77019741a44f19eee0739b7ee40f29e9472d3810d1aec1de92
         </div>
     </div>
 {% endblock %}
-", "@WebProfiler/Profiler/toolbar_redirect.html.twig", "/home/user42/Bureau/my_project/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/toolbar_redirect.html.twig");
+", "@WebProfiler/Profiler/toolbar_redirect.html.twig", "/home/grandma/Desktop/tuto_symfony/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/toolbar_redirect.html.twig");
     }
 }
