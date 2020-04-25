@@ -15,6 +15,17 @@
     {{ advert.content }}
   </div>
 
+  <div>
+    <ul>
+    {% for mmb in listApplications %}
+        <li> {{ mmb.author }}</li>
+        <li> {{ mmb.content }}</li>
+      {% else %}
+        <li> Aucun commentaire. </li>
+    {% endfor %}
+    </ul>
+  </div>
+
   <p>
     <a href="{{ path('oc_advert_index') }}" class="btn btn-default">
       <i class="glyphicon glyphicon-chevron-left"></i>

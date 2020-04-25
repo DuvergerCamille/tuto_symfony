@@ -114,24 +114,55 @@ class __TwigTemplate_200760616c031c6bc76d948fb686e9908e55779ee85a28152edf8b924d2
         echo "
   </div>
 
+  <div>
+    <ul>
+    ";
+        // line 20
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["listApplications"]) || array_key_exists("listApplications", $context) ? $context["listApplications"] : (function () { throw new RuntimeError('Variable "listApplications" does not exist.', 20, $this->source); })()));
+        $context['_iterated'] = false;
+        foreach ($context['_seq'] as $context["_key"] => $context["mmb"]) {
+            // line 21
+            echo "        <li> ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["mmb"], "author", [], "any", false, false, false, 21), "html", null, true);
+            echo "</li>
+        <li> ";
+            // line 22
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["mmb"], "content", [], "any", false, false, false, 22), "html", null, true);
+            echo "</li>
+      ";
+            $context['_iterated'] = true;
+        }
+        if (!$context['_iterated']) {
+            // line 24
+            echo "        <li> Aucun commentaire. </li>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['mmb'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 26
+        echo "    </ul>
+  </div>
+
   <p>
     <a href=\"";
-        // line 19
+        // line 30
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("oc_advert_index");
         echo "\" class=\"btn btn-default\">
       <i class=\"glyphicon glyphicon-chevron-left\"></i>
       Retour à la liste
     </a>
     <a href=\"";
-        // line 23
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("oc_advert_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["advert"]) || array_key_exists("advert", $context) ? $context["advert"] : (function () { throw new RuntimeError('Variable "advert" does not exist.', 23, $this->source); })()), "id", [], "any", false, false, false, 23)]), "html", null, true);
+        // line 34
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("oc_advert_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["advert"]) || array_key_exists("advert", $context) ? $context["advert"] : (function () { throw new RuntimeError('Variable "advert" does not exist.', 34, $this->source); })()), "id", [], "any", false, false, false, 34)]), "html", null, true);
         echo "\" class=\"btn btn-default\">
       <i class=\"glyphicon glyphicon-edit\"></i>
       Modifier l'annonce
     </a>
     <a href=\"";
-        // line 27
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("oc_advert_delete", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["advert"]) || array_key_exists("advert", $context) ? $context["advert"] : (function () { throw new RuntimeError('Variable "advert" does not exist.', 27, $this->source); })()), "id", [], "any", false, false, false, 27)]), "html", null, true);
+        // line 38
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("oc_advert_delete", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["advert"]) || array_key_exists("advert", $context) ? $context["advert"] : (function () { throw new RuntimeError('Variable "advert" does not exist.', 38, $this->source); })()), "id", [], "any", false, false, false, 38)]), "html", null, true);
         echo "\" class=\"btn btn-danger\">
       <i class=\"glyphicon glyphicon-trash\"></i>
       Supprimer l'annonce
@@ -159,7 +190,7 @@ class __TwigTemplate_200760616c031c6bc76d948fb686e9908e55779ee85a28152edf8b924d2
 
     public function getDebugInfo()
     {
-        return array (  134 => 27,  127 => 23,  120 => 19,  113 => 15,  107 => 12,  102 => 11,  94 => 9,  92 => 8,  82 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  165 => 38,  158 => 34,  151 => 30,  145 => 26,  138 => 24,  131 => 22,  126 => 21,  121 => 20,  113 => 15,  107 => 12,  102 => 11,  94 => 9,  92 => 8,  82 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -181,6 +212,17 @@ class __TwigTemplate_200760616c031c6bc76d948fb686e9908e55779ee85a28152edf8b924d2
     {{ advert.content }}
   </div>
 
+  <div>
+    <ul>
+    {% for mmb in listApplications %}
+        <li> {{ mmb.author }}</li>
+        <li> {{ mmb.content }}</li>
+      {% else %}
+        <li> Aucun commentaire. </li>
+    {% endfor %}
+    </ul>
+  </div>
+
   <p>
     <a href=\"{{ path('oc_advert_index') }}\" class=\"btn btn-default\">
       <i class=\"glyphicon glyphicon-chevron-left\"></i>
@@ -196,6 +238,6 @@ class __TwigTemplate_200760616c031c6bc76d948fb686e9908e55779ee85a28152edf8b924d2
     </a>
   </p>
 
-{% endblock %}", "Advert/view.html.twig", "/home/grandma/Desktop/tuto_symfony/templates/Advert/view.html.twig");
+{% endblock %}", "Advert/view.html.twig", "/home/user42/Bureau/my_project/templates/Advert/view.html.twig");
     }
 }

@@ -33,7 +33,7 @@ class AdvertController extends Controller
 	{
 		//mettre le namespace de l'entité correspondant au repository à demander dans getRepository
 		$repository = $this->getDoctrine()->getManager()->getRepository('App\Entity\Advert');
-  
+		$em = $this->getDoctrine()->getManager()->getRepository('App\Entity\Application');
 	    // On récupère l'entité correspondante à l'id $id
 	    $advert = $repository->find($id);
   
@@ -44,7 +44,7 @@ class AdvertController extends Controller
 		}
 		
 		 // On récupère la liste des candidatures de cette annonce
-		 $listApplications = $em->getRepository('App\Entity\Application')->findBy(array('advert' => $advert));
+		 $listApplications = $em->findBy(array('advert' => $advert));
 
 		return $this->render('Advert/view.html.twig', ['advert' => $advert, 'listApplications' => $listApplications]);
 	}
