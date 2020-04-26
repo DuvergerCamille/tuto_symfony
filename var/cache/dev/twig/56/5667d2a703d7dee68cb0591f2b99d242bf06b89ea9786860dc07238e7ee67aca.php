@@ -181,6 +181,6 @@ class __TwigTemplate_a04ae550b6eea2cc955ea2f5aa9fa20b1f35b999a551161df816b4868e4
         </div>
     </div>
 </div>
-", "@Twig/Exception/traces.html.twig", "/home/grandma/Desktop/tuto_symfony/vendor/symfony/twig-bundle/Resources/views/Exception/traces.html.twig");
+", "@Twig/Exception/traces.html.twig", "/home/user42/Bureau/tuto_symfony/vendor/symfony/twig-bundle/Resources/views/Exception/traces.html.twig");
     }
 }

@@ -224,6 +224,6 @@ class __TwigTemplate_85e6d7e33f483fa678f68163c5444796f16f93c46a6eef5ec58fba5ace4
         {{ include('@Twig/base_js.html.twig') }}
     </body>
 </html>
-", "@Twig/layout.html.twig", "/home/grandma/Desktop/tuto_symfony/vendor/symfony/twig-bundle/Resources/views/layout.html.twig");
+", "@Twig/layout.html.twig", "/home/user42/Bureau/tuto_symfony/vendor/symfony/twig-bundle/Resources/views/layout.html.twig");
     }
 }
