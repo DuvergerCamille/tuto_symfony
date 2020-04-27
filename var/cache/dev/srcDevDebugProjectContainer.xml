@@ -556,6 +556,9 @@
     <service id="App\DataFixtures\LoadSkill" class="App\DataFixtures\LoadSkill" public="false" autowire="true" autoconfigure="true">
       <tag name="doctrine.fixture.orm"/>
     </service>
+    <service id="App\Form\AdvertEditType" class="App\Form\AdvertEditType" public="false" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\AdvertType" class="App\Form\AdvertType" public="false" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -871,6 +874,7 @@
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\AdvertEditType</argument>
         <argument>App\Form\AdvertType</argument>
         <argument>App\Form\CategoryType</argument>
         <argument>App\Form\ImageType</argument>
@@ -1095,7 +1099,7 @@
       <argument type="service" id="form.resolved_type_factory"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id="service_locator.8oqrbhg"/>
+      <argument type="service" id="service_locator.4ykwrsq"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4647,6 +4651,8 @@
     <service id="abstract.instanceof.App\DataFixtures\LoadCategory" class="App\DataFixtures\LoadCategory" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\LoadSkill" class="App\DataFixtures\LoadSkill" public="false" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.App\DataFixtures\LoadSkill" class="App\DataFixtures\LoadSkill" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AdvertEditType" class="App\Form\AdvertEditType" public="false" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.App\Form\AdvertEditType" class="App\Form\AdvertEditType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AdvertType" class="App\Form\AdvertType" public="false" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.App\Form\AdvertType" class="App\Form\AdvertType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CategoryType" class="App\Form\CategoryType" public="false" autowire="true" abstract="true"/>
@@ -4892,9 +4898,10 @@
         <argument key="inline" type="service" id="fragment.renderer.inline"/>
       </argument>
     </service>
-    <service id="service_locator.8oqrbhg" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.4ykwrsq" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\AdvertEditType" type="service" id="App\Form\AdvertEditType"/>
         <argument key="App\Form\AdvertType" type="service" id="App\Form\AdvertType"/>
         <argument key="App\Form\CategoryType" type="service" id="App\Form\CategoryType"/>
         <argument key="App\Form\ImageType" type="service" id="App\Form\ImageType"/>

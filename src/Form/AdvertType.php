@@ -8,6 +8,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class AdvertType extends AbstractType
 {
@@ -18,6 +19,12 @@ class AdvertType extends AbstractType
         ->add('author',    TextType::class)
         ->add('content',   TextareaType::class)
         ->add('image',     ImageType::class)
+        ->add('categories', EntityType::class, array(
+            'class'        => 'App\Entity\Category',
+            'choice_label' => 'name',
+            'multiple'     => true,
+            'expanded'     => true,
+          ))
         ->add('save',      SubmitType::class);
         ;
     }

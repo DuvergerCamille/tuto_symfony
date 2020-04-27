@@ -5,6 +5,7 @@ namespace App\Controller;
 
 use App\Entity\Advert;
 use App\Form\AdvertType;
+use App\Form\AdvertEditType;
 use App\Entity\Image;
 use App\Entity\Application;
 use App\Entity\AdvertSkill;
@@ -21,6 +22,7 @@ use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class AdvertController extends Controller
 {
@@ -91,32 +93,47 @@ class AdvertController extends Controller
 	      throw $this->createNotFoundException("L'annonce d'id ".$id." n'existe pas.");
 	    }
 
-	    $listCategories = $em->getRepository('App\Entity\Category')->findAll();
+		$form   = $this->createForm(AdvertEditType::class, $advert);
 
-  	    foreach ($listCategories as $category) {
-		  $advert->addCategory($category);
-		}
-		 
-    	$em->flush();
-		return $this->render('Advert/edit.html.twig', ['advert' => $advert]);
+		if ($request->isMethod('POST')) {
+			
+			$form->handleRequest($request);
+	  
+			if ($form->isValid()) {
+			  $em = $this->getDoctrine()->getManager();
+			  $em->flush();
+	  
+			  $request->getSession()->getFlashBag()->add('notice', 'Annonce bien modifiée.');
+	  
+			  return $this->redirectToRoute('oc_advert_view', ['id' => $advert->getId()]);
+			}
+		  }
+	   
+		return $this->render('Advert/edit.html.twig', ['advert' => $advert,'form' => $form->createView()]);
 	}
 
-	public function delete($id)
+	public function delete(Request $request, $id)
 	{
 		$em = $this->getDoctrine()->getManager();
 
     	$advert = $em->getRepository('App\Entity\Advert')->find($id);
 
     	if (null === $advert) {
-    	  throw $this->createNotFoundException("L'annonce d'id ".$id." n'existe pas.");
+      		throw $this->createNotFoundException("L'annonce d'id ".$id." n'existe pas.");
     	}
 
-   		foreach ($advert->getCategories() as $category) {
-      		$advert->removeCategory($category);
-    	}
+    	$form = $this->get('form.factory')->create();
 
-	    $em->flush();
-		return $this->render('Advert/delete.html.twig');
+    	if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
+      		$em->remove($advert);
+      		$em->flush();
+
+      		$request->getSession()->getFlashBag()->add('info', "L'annonce a bien été supprimée.");
+
+      		return $this->redirectToRoute('oc_advert_index');
+    	}
+    
+    	return $this->render('Advert/delete.html.twig', ['advert' => $advert, 'form' => $form->createView()]);
 	}
 
 }
