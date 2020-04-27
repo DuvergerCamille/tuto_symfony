@@ -287,6 +287,6 @@ class __TwigTemplate_ec91900406005a6617ea798a204a7e40f7dda4d56a6dbf5648e4c12a620
 
 </body>
 </html>
-", "layout.html.twig", "/home/user42/Bureau/tuto_symfony/templates/layout.html.twig");
+", "layout.html.twig", "/home/grandma/Desktop/tuto_symfony/templates/layout.html.twig");
     }
 }

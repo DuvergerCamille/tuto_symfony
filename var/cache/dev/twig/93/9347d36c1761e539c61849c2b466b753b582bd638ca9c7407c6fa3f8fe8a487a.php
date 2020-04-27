@@ -79,6 +79,6 @@ class __TwigTemplate_b34be8a272474bf94824e5b936af8f956ba65c1bda6e0c12dcb00b6dd88
         return new Source("<?xml version=\"1.0\" encoding=\"{{ _charset }}\" ?>
 
 <error code=\"{{ status_code }}\" message=\"{{ status_text }}\" />
-", "@Twig/Exception/error.xml.twig", "/home/user42/Bureau/tuto_symfony/vendor/symfony/twig-bundle/Resources/views/Exception/error.xml.twig");
+", "@Twig/Exception/error.xml.twig", "/home/grandma/Desktop/tuto_symfony/vendor/symfony/twig-bundle/Resources/views/Exception/error.xml.twig");
     }
 }

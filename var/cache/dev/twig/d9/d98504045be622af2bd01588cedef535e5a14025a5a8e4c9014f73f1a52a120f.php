@@ -173,6 +173,6 @@ class __TwigTemplate_a254313726550fdba36dfe768ec322b279288a38d7625004e75e011dda8
         {% block javascripts %}{% endblock %}
     </body>
 </html>
-", "base.html.twig", "/home/user42/Bureau/tuto_symfony/templates/base.html.twig");
+", "base.html.twig", "/home/grandma/Desktop/tuto_symfony/templates/base.html.twig");
     }
 }

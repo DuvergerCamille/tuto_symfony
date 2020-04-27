@@ -338,6 +338,6 @@ class __TwigTemplate_200760616c031c6bc76d948fb686e9908e55779ee85a28152edf8b924d2
     </a>
   </p>
 
-{% endblock %}", "Advert/view.html.twig", "/home/user42/Bureau/tuto_symfony/templates/Advert/view.html.twig");
+{% endblock %}", "Advert/view.html.twig", "/home/grandma/Desktop/tuto_symfony/templates/Advert/view.html.twig");
     }
 }

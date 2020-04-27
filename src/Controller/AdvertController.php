@@ -4,6 +4,7 @@
 namespace App\Controller;
 
 use App\Entity\Advert;
+use App\Form\AdvertType;
 use App\Entity\Image;
 use App\Entity\Application;
 use App\Entity\AdvertSkill;
@@ -15,6 +16,11 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Twig\Environment;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\FormType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class AdvertController extends Controller
 {
@@ -51,55 +57,28 @@ class AdvertController extends Controller
 
 	public function add(Request $request)
 	{
-		 $advert = new Advert();
-		 $advert->setTitle('Recherche développeur pour le lol');
-		 $advert->setAuthor('Jean-Eude');
-		 $advert->setContent("Nous recherchons un développeur de memes de qualite sur Lyon. Blabla…");
 
-		 $image = new Image();
-    	 $image->setUrl('http://sdz-upload.s3.amazonaws.com/prod/upload/job-de-reve.jpg');
-    	 $image->setAlt('Job de rêve');
+		$advert = new Advert();
 
+		$form   = $this->createForm(AdvertType::class, $advert);
 
-		 $advert->setImage($image);
-		 
-		 $application1 = new Application();
-		 $application1->setAuthor('Marine');
-		 $application1->setContent("J'ai toutes les qualités requises.");
-	 
-		 $application2 = new Application();
-		 $application2->setAuthor('Pierre');
-		 $application2->setContent("Je suis très motivé.");
-	 
-		 $application1->setAdvert($advert);
-		 $application2->setAdvert($advert);
-	 
-		 $em = $this->getDoctrine()->getManager();
-		 $em->persist($advert);
-    	 $em->persist($application1);
-		 $em->persist($application2);
-		 
-		 $listSkills = $em->getRepository('App\Entity\Skill')->findAll();
-
-		 foreach ($listSkills as $skill) {
-
-			$advertSkill = new AdvertSkill();
-		 	$advertSkill->setAdvert($advert);
-			$advertSkill->setSkill($skill);
-		 	$advertSkill->setLevel('Expert');
-			$em->persist($advertSkill);
+		if ($request->isMethod('POST')) {
+			
+			$form->handleRequest($request);
+	  
+			if ($form->isValid()) {
+			  $em = $this->getDoctrine()->getManager();
+			  $em->persist($advert);
+			  $em->flush();
+	  
+			  $request->getSession()->getFlashBag()->add('notice', 'Annonce bien enregistrée.');
+	  
+			  return $this->redirectToRoute('oc_advert_view', ['id' => $advert->getId()]);
 			}
+		  }
+	  
 
-		 $em->persist($advert);
-
-		 $em->flush();
-	 
-		 if ($request->isMethod('POST')) {
-		   $request->getSession()->getFlashBag()->add('notice', 'Annonce bien enregistrée.');
-	 
-		   return $this->redirectToRoute('oc_advert_view', ['id' => $advert->getId()]);
-		 }
-		 return $this->render('Advert/add.html.twig', ['advert' => $advert]);
+		return $this->render('Advert/add.html.twig', ['form' => $form->createView()]);
 	}
 
 	public function edit($id, Request $request)

@@ -163,6 +163,6 @@ class __TwigTemplate_8eb092a5836d7946f2b3b7d6d132ff3764ac1715a8c9ef7d2e95d69cb96
         </tr>
     </tbody>
 </table>
-", "@Twig/Exception/traces_text.html.twig", "/home/user42/Bureau/tuto_symfony/vendor/symfony/twig-bundle/Resources/views/Exception/traces_text.html.twig");
+", "@Twig/Exception/traces_text.html.twig", "/home/grandma/Desktop/tuto_symfony/vendor/symfony/twig-bundle/Resources/views/Exception/traces_text.html.twig");
     }
 }
