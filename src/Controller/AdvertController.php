@@ -16,7 +16,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Twig\Environment;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -57,9 +59,11 @@ class AdvertController extends Controller
 		return $this->render('Advert/view.html.twig', ['advert' => $advert, 'listApplications' => $listApplications, 'listAdvertSkills' => $listAdvertSkills]);
 	}
 
+	/**
+     * @Security("has_role('ROLE_AUTEUR')")
+     */
 	public function add(Request $request)
 	{
-
 		$advert = new Advert();
 
 		$form   = $this->createForm(AdvertType::class, $advert);

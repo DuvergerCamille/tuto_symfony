@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
@@ -18,6 +19,7 @@ class Advert
 
      /**
      * @ORM\OneToOne(targetEntity="App\Entity\Image", cascade={"persist"})
+     * @Assert\Valid()
      */
     private $image;
 
@@ -30,16 +32,19 @@ class Advert
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(min=10)
      */
     private $title;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(min=2)
      */
     private $author;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank()
      */
     private $content;
 

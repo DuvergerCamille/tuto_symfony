@@ -135,9 +135,22 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        // test
-        if ('/test' === $pathinfo) {
-            return array (  '_controller' => 'App\\Controller\\TestController::index',  '_route' => 'test',);
+        elseif (0 === strpos($pathinfo, '/login')) {
+            // login
+            if ('/login' === $pathinfo) {
+                return array (  '_controller' => 'App\\Controller\\UsersController::login',  '_route' => 'login',);
+            }
+
+            // login_check
+            if ('/login_check' === $pathinfo) {
+                return ['_route' => 'login_check'];
+            }
+
+        }
+
+        // logout
+        if ('/logout' === $pathinfo) {
+            return ['_route' => 'logout'];
         }
 
         if ('/' === $pathinfo && !$allow) {

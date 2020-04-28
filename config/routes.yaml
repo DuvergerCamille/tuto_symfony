@@ -1,10 +1,6 @@
 # This file is the entry point to configure your own HTTP routes.
 # Files in the routes/ subdirectory configure the routes for your dependencies.
 
-#index:
-#    path: /
-#    defaults: { _controller: 'App\Controller\DefaultController::index' }
-
 oc_advert_view:
     path: /advert/view/{id}
     requirements:
@@ -26,3 +22,14 @@ oc_advert_delete:
     requirements:
         id: '\d+'
     controller: App\Controller\AdvertController::delete
+
+login:
+    path: /login
+    defaults:
+        _controller: App\Controller\UsersController::login
+
+login_check:
+    path: /login_check
+
+logout:
+    path: /logout
