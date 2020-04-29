@@ -153,6 +153,21 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return ['_route' => 'logout'];
         }
 
+        // oc_user_signUp
+        if ('/signUp' === $pathinfo) {
+            return array (  '_controller' => 'App\\Controller\\UsersController::signUp',  '_route' => 'oc_user_signUp',);
+        }
+
+        // oc_user_edit
+        if ('/edit' === $pathinfo) {
+            return array (  '_controller' => 'App\\Controller\\UsersController::edit',  '_route' => 'oc_user_edit',);
+        }
+
+        // test
+        if ('/test' === $pathinfo) {
+            return array (  '_controller' => 'App\\Controller\\UsersController::test',  '_route' => 'test',);
+        }
+
         if ('/' === $pathinfo && !$allow) {
             throw new Symfony\Component\Routing\Exception\NoConfigurationException();
         }

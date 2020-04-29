@@ -38,6 +38,9 @@ class srcDevDebugProjectContainerUrlGenerator extends Symfony\Component\Routing\
         'login' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'App\\Controller\\UsersController::login',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/login',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
         'login_check' => array (  0 =>   array (  ),  1 =>   array (  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/login_check',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
         'logout' => array (  0 =>   array (  ),  1 =>   array (  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/logout',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'oc_user_signUp' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'App\\Controller\\UsersController::signUp',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/signUp',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'oc_user_edit' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'App\\Controller\\UsersController::edit',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/edit',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+        'test' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'App\\Controller\\UsersController::test',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/test',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
     ];
         }
     }

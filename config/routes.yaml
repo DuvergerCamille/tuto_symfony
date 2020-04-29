@@ -33,3 +33,15 @@ login_check:
 
 logout:
     path: /logout
+
+oc_user_signUp:
+    path: /signUp
+    controller: App\Controller\UsersController::signUp
+
+oc_user_edit:
+    path: /edit
+    controller: App\Controller\UsersController::edit
+
+test:
+    path: test
+    controller: App\Controller\UsersController::test

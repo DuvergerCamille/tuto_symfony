@@ -583,6 +583,9 @@
     <service id="App\Form\ImageType" class="App\Form\ImageType" public="false" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\UsersType" class="App\Form\UsersType" public="false" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Repository\AdvertRepository" class="App\Repository\AdvertRepository" public="false" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -627,7 +630,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-50"/>
-      <argument type="service" id="service_locator.sr6ctxe"/>
+      <argument type="service" id="service_locator.m4kwbji"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-100"/>
@@ -897,6 +900,7 @@
         <argument>App\Form\AdvertType</argument>
         <argument>App\Form\CategoryType</argument>
         <argument>App\Form\ImageType</argument>
+        <argument>App\Form\UsersType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FileType</argument>
@@ -1118,7 +1122,7 @@
       <argument type="service" id="form.resolved_type_factory"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id="service_locator.4ykwrsq"/>
+      <argument type="service" id="service_locator.teherh5"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4815,6 +4819,8 @@
     <service id="abstract.instanceof.App\Form\CategoryType" class="App\Form\CategoryType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ImageType" class="App\Form\ImageType" public="false" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.App\Form\ImageType" class="App\Form\ImageType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\UsersType" class="App\Form\UsersType" public="false" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.App\Form\UsersType" class="App\Form\UsersType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AdvertRepository" class="App\Repository\AdvertRepository" public="false" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.App\Repository\AdvertRepository" class="App\Repository\AdvertRepository" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AdvertSkillRepository" class="App\Repository\AdvertSkillRepository" public="false" autowire="true" abstract="true"/>
@@ -5018,7 +5024,11 @@
         <argument>make:migration</argument>
       </call>
     </service>
-    <service id="service_locator.sr6ctxe" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.puq9zem" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection"/>
+    </service>
+    <service id="service_locator.m4kwbji" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection"/>
     </service>
@@ -5056,13 +5066,14 @@
         <argument key="inline" type="service" id="fragment.renderer.inline"/>
       </argument>
     </service>
-    <service id="service_locator.4ykwrsq" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.teherh5" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\AdvertEditType" type="service" id="App\Form\AdvertEditType"/>
         <argument key="App\Form\AdvertType" type="service" id="App\Form\AdvertType"/>
         <argument key="App\Form\CategoryType" type="service" id="App\Form\CategoryType"/>
         <argument key="App\Form\ImageType" type="service" id="App\Form\ImageType"/>
+        <argument key="App\Form\UsersType" type="service" id="App\Form\UsersType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service" id="form.type.choice"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\FileType" type="service" id="form.type.file"/>
